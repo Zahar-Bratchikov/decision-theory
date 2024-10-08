@@ -1,4 +1,6 @@
 import math
+import numpy as np
+import matplotlib.pyplot as plt
 
 # точность 10^-6
 tolerance = 10 ** -6
@@ -29,3 +31,16 @@ while ((abs(x_k_n - x_k) < tolerance) and (abs(f(x_k_n) - f(x_k)) < tolerance)):
 print("Минимальный x: " + str(x_k_n))
 print("Минимальное значение функции: " + str(f(x_k_n)))
 print("Итерации: " + str(iteration))
+
+# Построение графика функции
+x_vals = np.linspace(0.5, 1, 400)
+y_vals = [f(x) for x in x_vals]
+
+plt.plot(x_vals, y_vals, label="f(x)")
+plt.scatter(x_min, f(x_min), color="red", label=f"Минимум (x={x_min:.6f}, f(x)={f(x_min):.6f})")
+plt.title("График функции f(x)")
+plt.xlabel("x")
+plt.ylabel("f(x)")
+plt.legend()
+plt.grid(True)
+plt.show()

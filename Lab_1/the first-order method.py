@@ -50,3 +50,4 @@ x_min = (a + b) / 2
 print("Минимальный x: " + str(x_min))
 print("Минимальное значение функции : " + str(f(x_min)))
 print("Итерации: " + str(iteration))
+
